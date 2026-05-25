@@ -16,6 +16,7 @@ import java.time.LocalTime;
 public class EmpleadoTech {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column (name = "id_empleado")
     private Integer id;
 
     private Integer rut;
