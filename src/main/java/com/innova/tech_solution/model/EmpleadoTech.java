@@ -1,6 +1,8 @@
 package com.innova.tech_solution.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,12 +21,17 @@ public class EmpleadoTech {
     @Column (name = "id_empleado")
     private Integer id;
 
-
+    @NotBlank(message = "rut obligatorio")
+    @Size(max = 8, message = "El rut no puede superar los 8 digitos")
     private Integer rut;
 
+    @NotBlank(message = "rut digito verificador obligatorio")
+    @Size(max = 1, message = "El ultimo digito no puede ser superado a mas de 1 digito")
     @Column (name = "rut_dv")
-    private Integer rutdv;
+    private String rutdv;
+
     private String nombre;
+
     private String email;
 
     @Column (name = "id_rol")
