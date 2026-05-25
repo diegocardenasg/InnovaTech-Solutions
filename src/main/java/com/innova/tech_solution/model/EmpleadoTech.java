@@ -19,7 +19,11 @@ public class EmpleadoTech {
     @Column (name = "id_empleado")
     private Integer id;
 
+
     private Integer rut;
+
+    @Column (name = "rut_dv")
+    private Integer rutdv;
     private String nombre;
     private String email;
 
